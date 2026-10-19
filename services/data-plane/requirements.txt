@@ -1,0 +1,69 @@
+# ZeroTrace Data Plane — pinned dependencies
+# Python 3.11+ required (tested on 3.11, 3.14)
+
+# Web framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+python-multipart==0.0.12
+
+# Data validation
+pydantic==2.9.2
+pydantic-settings==2.6.1
+
+# Database — Postgres
+psycopg[binary,pool]==3.2.3
+asyncpg==0.30.0
+pgvector==0.3.6
+sqlalchemy==2.0.36
+alembic==1.14.0
+
+# Cache
+redis==5.2.0
+
+# Object storage / AWS
+boto3==1.35.74
+botocore==1.35.74
+
+# Apache Spark + Iceberg
+# NOTE: PySpark 3.5.x — Iceberg runtime jar is fetched at Docker build time
+pyspark==3.5.3
+pyiceberg[s3fs,pyarrow]==0.8.1
+pyarrow==18.0.0
+
+# Embeddings (multilingual, offline)
+sentence-transformers==3.3.1
+# Small model: paraphrase-multilingual-MiniLM-L12-v2 — downloaded at build time
+
+# Bloom filters for Subject Locator Index
+pybloom-live==4.0.0
+
+# Data generation / seeding
+faker==33.1.0
+
+# Structured logging
+structlog==24.4.0
+
+# HTTP client (health checks, LLM adapter)
+httpx==0.28.0
+
+# Cryptography
+cryptography==44.0.0
+
+# PDF / QR (not primary for data plane but kept for receipt stubs)
+qrcode==8.0
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.0
+
+# Linting / typing
+ruff==0.8.2
+mypy==1.13.0
+
+# Utilities
+python-ulid==3.0.0
+python-dotenv==1.0.1
+tenacity==9.0.0
+orjson==3.10.12

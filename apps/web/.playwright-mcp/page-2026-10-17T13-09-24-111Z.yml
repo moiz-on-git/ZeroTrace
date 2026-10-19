@@ -1,0 +1,67 @@
+- generic [ref=f8e4]:
+  - complementary [ref=f8e5]:
+    - generic [ref=f8e6]:
+      - generic [aria-hidden] [ref=f8e7]: ZT
+      - generic [ref=f8e8]: ZeroTrace
+      - generic [ref=f8e9]: dev
+    - navigation "Workflows" [ref=f8e10]:
+      - paragraph [ref=f8e11]: Workflows
+      - link "Data Principal Portal" [ref=f8e12] [cursor=pointer]:
+        - /url: /portal
+      - link "DPO Console" [ref=f8e14] [cursor=pointer]:
+        - /url: /console
+      - link "Adversary Console" [ref=f8e16] [cursor=pointer]:
+        - /url: /adversary
+      - link "Public Verifier" [ref=f8e18] [cursor=pointer]:
+        - /url: /verify
+    - navigation "Presenter" [ref=f8e20]:
+      - paragraph [ref=f8e21]: Presenter
+      - link "Demo Director" [ref=f8e22] [cursor=pointer]:
+        - /url: /demo
+    - paragraph [ref=f8e25]: Erasure and proof infrastructure for DPDP Act compliance. All statutory mappings require legal review.
+  - generic [ref=f8e26]:
+    - banner [ref=f8e27]:
+      - link "Skip to content" [ref=f8e28] [cursor=pointer]:
+        - /url: "#content"
+      - generic [ref=f8e29]: ZeroTrace
+      - generic [ref=f8e30]: Kaveri Finserv (demo data) · ap-south-1
+      - generic [ref=f8e31]: dev
+    - main [ref=f8e32]:
+      - generic [ref=f8e40]:
+        - generic [ref=f8e41]:
+          - generic [ref=f8e42]:
+            - paragraph [ref=f8e43]: Data Principal · Kaveri Finserv
+            - heading "Exercise your data rights" [level=1] [ref=f8e44]
+            - paragraph [ref=f8e45]: Under India's DPDP Act 2023 you can ask any company to correct, complete or erase the personal data it holds about you. This portal is Kaveri Finserv's erasure desk. It works by voice or by text, and answers in the language you speak.
+          - group "Language" [ref=f8e46]:
+            - generic [ref=f8e48]:
+              - button "English" [pressed] [ref=f8e49] [cursor=pointer]
+              - button "हिन्दी" [ref=f8e50] [cursor=pointer]
+              - button "ಕನ್ನಡ" [ref=f8e51] [cursor=pointer]
+              - button "தமிழ்" [ref=f8e52] [cursor=pointer]
+              - button "తెలుగు" [ref=f8e53] [cursor=pointer]
+        - generic [ref=f8e98]:
+          - generic [ref=f8e99]:
+            - heading "Your request is moving" [level=2] [ref=f8e101]
+            - generic [ref=f8e102]: Reconnecting to updates…
+          - list [ref=f8e104]:
+            - listitem [ref=f8e105]:
+              - paragraph [ref=f8e108]: Received
+            - listitem [ref=f8e109]:
+              - paragraph [ref=f8e112]: Understood
+            - listitem [ref=f8e113]:
+              - paragraph [ref=f8e116]: Located
+            - listitem [ref=f8e117]:
+              - paragraph [ref=f8e120]: Approved
+            - listitem [ref=f8e121]:
+              - paragraph [ref=f8e124]: Erased
+            - listitem [ref=f8e125]:
+              - paragraph [ref=f8e128]: Verified
+        - generic [ref=f8e81]:
+          - paragraph [ref=f8e82]: ZeroTrace · erasure and proof infrastructure for Kaveri Finserv (demo)
+          - paragraph [ref=f8e83]:
+            - link "/verify" [ref=f8e84] [cursor=pointer]:
+              - /url: /verify
+            - text: ·
+            - link "/console" [ref=f8e85] [cursor=pointer]:
+              - /url: /console

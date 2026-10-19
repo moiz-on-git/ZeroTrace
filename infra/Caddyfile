@@ -1,0 +1,12 @@
+{
+    email admin@zerotrace.dev
+}
+
+api.zerotrace.dev {
+    reverse_proxy orchestrator:8001
+}
+
+app.zerotrace.dev {
+    # If self-hosted or static proxy
+    reverse_proxy web:3000
+}

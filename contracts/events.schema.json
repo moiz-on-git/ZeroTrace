@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zerotrace.dev/schemas/events.schema.json",
+  "title": "ZeroTraceEvent",
+  "description": "Unified event schema for ZeroTrace tri-layer erasure pipeline and audit engine",
+  "type": "object",
+  "required": ["seq", "ts", "job_id", "stage", "kind", "layer", "message", "data"],
+  "properties": {
+    "seq": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonically increasing sequence number per job"
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 UTC timestamp"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^job_[0-9A-Za-z]{26}$",
+      "description": "ULID prefixed with job_"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "INTAKE",
+        "PARSE",
+        "DISCOVERY",
+        "POLICY",
+        "PLAN",
+        "APPROVAL",
+        "ERASE_CRYPTO",
+        "ERASE_ICEBERG",
+        "ERASE_VECTOR",
+        "ERASE_CACHE",
+        "AUDIT",
+        "REMEDIATE",
+        "PROOF",
+        "ANCHOR",
+        "COMPLETE"
+      ],
+      "description": "Current pipeline execution stage"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "started",
+        "progress",
+        "metric",
+        "finding",
+        "completed",
+        "failed",
+        "log"
+      ],
+      "description": "Type/nature of the event emission"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "system",
+        "intake",
+        "discovery",
+        "policy",
+        "crypto",
+        "iceberg",
+        "vector",
+        "cache",
+        "relational",
+        "audit",
+        "proof",
+        "chain"
+      ],
+      "description": "Target architectural layer emitting this event"
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable progress narrative. NEVER contains raw personal identifiers."
+    },
+    "data": {
+      "type": "object",
+      "description": "Structured operational metrics and findings payload",
+      "properties": {
+        "files_total": { "type": "integer" },
+        "files_targeted": { "type": "integer" },
+        "files_rewritten": { "type": "integer" },
+        "bytes_rewritten": { "type": "integer" },
+        "bytes_shredded": { "type": "integer" },
+        "snapshots_expired": { "type": "integer" },
+        "orphan_files_removed": { "type": "integer" },
+        "metadata_files_removed": { "type": "integer" },
+        "object_versions_deleted": { "type": "integer" },
+        "vectors_deleted": { "type": "integer" },
+        "cache_keys_deleted": { "type": "integer" },
+        "dead_tuples_vacuumed": { "type": "integer" },
+        "cost_naive_inr": { "type": "number" },
+        "cost_targeted_inr": { "type": "number" },
+        "saving_pct": { "type": "number" },
+        "duration_ms": { "type": "integer" },
+        "progress_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "step_name": { "type": "string" },
+        "finding": { "type": "object" },
+        "error_detail": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

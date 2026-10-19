@@ -1,0 +1,99 @@
+# ZeroTrace Helm Chart Default Values
+global:
+  environment: production
+  imageRegistry: ghcr.io/zerotrace
+  imagePullPolicy: IfNotPresent
+
+orchestrator:
+  replicaCount: 2
+  image:
+    repository: ghcr.io/zerotrace/orchestrator
+    tag: "1.0.0"
+  service:
+    type: ClusterIP
+    port: 8001
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    readOnlyRootFilesystem: false
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop:
+        - ALL
+  env:
+    ZT_ENV: production
+    ZT_PORT: "8001"
+    ZT_ANCHOR_PROVIDER: shiprite
+    ZT_ENABLE_OFFLINE_FALLBACK: "false"
+
+dataPlane:
+  replicaCount: 1
+  image:
+    repository: ghcr.io/zerotrace/data-plane
+    tag: "1.0.0"
+  service:
+    type: ClusterIP
+    port: 8002
+  resources:
+    limits:
+      cpu: 2000m
+      memory: 2Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop:
+        - ALL
+
+web:
+  replicaCount: 2
+  image:
+    repository: ghcr.io/zerotrace/web
+    tag: "1.0.0"
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: app.zerotrace.dev
+      paths:
+        - path: /
+          pathType: Prefix
+          service: web
+    - host: api.zerotrace.dev
+      paths:
+        - path: /
+          pathType: Prefix
+          service: orchestrator
+  tls:
+    - secretName: zerotrace-tls
+      hosts:
+        - app.zerotrace.dev
+        - api.zerotrace.dev
+
+networkPolicy:
+  enabled: true

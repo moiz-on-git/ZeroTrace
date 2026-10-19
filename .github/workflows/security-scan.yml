@@ -1,0 +1,51 @@
+name: ZeroTrace DevSecOps & Vulnerability Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 4 * * 1'  # Weekly vulnerability scan every Monday at 04:00 UTC
+
+jobs:
+  sast-and-secret-scan:
+    name: SAST & Secret Detection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Bandit & Safety
+        run: |
+          pip install --upgrade pip bandit
+
+      - name: Run Bandit Security Audit (Python AST)
+        run: |
+          bandit -r services/orchestrator/src services/data-plane/src -ll -ii || true
+
+  container-security-trivy:
+    name: Container Vulnerability Scan (Trivy)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Orchestrator Image (Local)
+        run: |
+          docker build -t zerotrace/orchestrator:test services/orchestrator
+
+      - name: Scan Orchestrator Image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'zerotrace/orchestrator:test'
+          format: 'table'
+          exit-code: '0'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'

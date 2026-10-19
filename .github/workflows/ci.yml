@@ -1,0 +1,36 @@
+name: ZeroTrace CI
+
+on:
+  push:
+    branches: [ main, "moiz/*" ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-orchestrator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r services/orchestrator/requirements.txt
+
+      - name: Run unit and contract tests (48 tests)
+        run: |
+          pytest services/orchestrator/tests -v
+
+      - name: Verify Cryptographic Proof Benchmarks
+        run: |
+          python scripts/benchmark_proofs.py
+
+      - name: Run End-to-End Golden Path Test
+        run: |
+          python scripts/e2e_golden_path.py

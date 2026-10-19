@@ -1,0 +1,952 @@
+[      14ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[      68ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[     157ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[     157ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[     157ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[     157ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[     157ms] [LOG] Client ID: %s (%s) d4e9b312-45df-45c0-a785-1a4393b4a380 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[     314ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[     314ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[     314ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_nyf18yjc"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[     318ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[     319ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   20932ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   20981ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   21015ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   21015ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   21015ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   21015ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   21015ms] [LOG] Client ID: %s (%s) fecb56ca-4ee0-4c97-86a4-0a9beccd1128 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   21172ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   21172ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   21172ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_ssnds96u"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   21176ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   21176ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   21549ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   21586ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   21613ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   21613ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   21613ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   21613ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   21613ms] [LOG] Client ID: %s (%s) d7f7f702-cf89-4cb2-a88c-c34ccf62859d top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   21766ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   21766ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   21766ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_snawg86d"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   21769ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   21770ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   22145ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   22182ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   22211ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   22211ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   22211ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   22211ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   22211ms] [LOG] Client ID: %s (%s) eb8915da-6440-4342-9e6f-254960798e4e top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   22366ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   22366ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   22366ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_ry0g29mp"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   22370ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   22370ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   44240ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   44285ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   44315ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   44315ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   44315ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   44315ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   44315ms] [LOG] Client ID: %s (%s) 7f6d2537-c626-4f7f-8255-36f4d1394e67 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   44468ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   44472ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   44472ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   44472ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_g70v1i5m"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   44503ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   44532ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   44532ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   44532ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   44532ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   44532ms] [LOG] Client ID: %s (%s) b0b752cc-0c70-4289-8161-a89f25df5ddb top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   44678ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   44710ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   44742ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   44742ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   44742ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   44742ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   44742ms] [LOG] Client ID: %s (%s) e1d105aa-7f5c-4733-b021-1fa99ee40327 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   44892ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   44892ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   44892ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_lce4bf18"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   44895ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   44895ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   79239ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   79286ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   79319ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   79319ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   79319ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   79319ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   79319ms] [LOG] Client ID: %s (%s) 98566ce9-cd5d-4fe7-93e3-497f6aee6091 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   79470ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   79470ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   79470ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_4sdnz4r2"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   79473ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   79474ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   79643ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   79681ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   79711ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   79711ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   79711ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   79711ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   79711ms] [LOG] Client ID: %s (%s) 3817a989-8e3a-4f68-b543-fd3269628bfe top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   79870ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   79870ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   79870ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_sngxvtn2"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   79873ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   79873ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   80158ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   80196ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   80227ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   80227ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   80227ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   80227ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   80227ms] [LOG] Client ID: %s (%s) 25ea1fcd-459e-4a44-816f-28b23ee95a58 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   80386ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   80386ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   80386ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_ug1rzjs6"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   80389ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   80390ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   81291ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   81332ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   81359ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   81359ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   81359ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   81359ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   81359ms] [LOG] Client ID: %s (%s) 61a055d6-1fd7-4933-9e08-ba35b113ddd1 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   81520ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   81520ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   81520ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_mkpgy0sw"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   81523ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   81524ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   81992ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   82035ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   82065ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   82065ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   82065ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   82065ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   82065ms] [LOG] Client ID: %s (%s) bed52575-c2de-45fa-b9f0-bcab5a9b890f top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   82220ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   82220ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   82220ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_kkwslvh7"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   82223ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   82223ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   82436ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   82465ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   82493ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   82493ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   82493ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   82493ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   82493ms] [LOG] Client ID: %s (%s) 7b1dcf13-c09a-462d-8fa3-88dd44ce2bf8 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   82643ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   82643ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   82643ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_f8ctc2kh"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   82646ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   82647ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   82875ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   82915ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   82943ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   82943ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   82943ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   82943ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   82943ms] [LOG] Client ID: %s (%s) c53cf686-2220-4228-84e7-44df15a4e7d9 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   83096ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   83096ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   83096ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_lb8xtsdn"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   83100ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   83100ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   83254ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   83288ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   83315ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   83315ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   83315ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   83315ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   83315ms] [LOG] Client ID: %s (%s) 13e44960-098c-4f71-af51-30eb4b5830ab top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   83469ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   83469ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   83469ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_0fkems2g"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   83472ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   83473ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   83596ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   83633ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   83662ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   83662ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   83662ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   83662ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   83662ms] [LOG] Client ID: %s (%s) 04141bf6-6204-485d-9fe2-5ed5e000ac19 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   83818ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   83818ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   83818ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_bop3basp"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   83821ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   83821ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   83958ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   83996ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   84024ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   84024ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   84024ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   84024ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   84024ms] [LOG] Client ID: %s (%s) 5e014a48-4099-4ee9-ae84-cf8a0705b18d top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   84179ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   84179ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   84179ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_5a63y62c"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   84182ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   84183ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   84357ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   84396ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   84440ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   84440ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   84440ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   84440ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   84440ms] [LOG] Client ID: %s (%s) abf469f6-dd7b-4ee4-be92-623992c268ab top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   84592ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   84592ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   84592ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_yb4jj1i6"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   84595ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   84595ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   84731ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /console
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   84764ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[   84791ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[   84791ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[   84791ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[   84791ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[   84791ms] [LOG] Client ID: %s (%s) c57442a2-9d7c-4a47-bbd3-d1cb1d72c7f9 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[   84953ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   84953ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   84953ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K8FV2Q3P5N7HDT9…}],"error":null,"request_id":"req_mock_2ksfinzm"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   84956ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   84957ms] [ERROR] Warning: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.%s req_01J8BJ0K8FV2Q3P5N7HDT9MWYG 
+    at tbody
+    at table
+    at div
+    at div
+    at ConsoleQueuePage (http://localhost:3000/src/routes/ConsoleQueuePage.tsx:34:2)
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Outlet (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4833:25)
+    at main
+    at div
+    at div
+    at div
+    at AppShell
+    at RenderedRoute (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4204:26)
+    at Routes (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4886:19)
+    at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:4838:29)
+    at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=363a605a:7287:26)
+    at App
+    at QueryClientProvider (http://localhost:3000/node_modules/.vite/deps/@tanstack_react-query.js?v=363a605a:43:30) @ http://localhost:3000/@vite/client:356
+[   85968ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   85968ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   85968ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"component":"orchestrator","status":"gre…}],"error":null,"request_id":"req_mock_pwrsfzf9"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   94684ms] [LOG] Request {url: URL, method: POST, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   94684ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   94684ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":{"ok":true,"scenario":"success"},"error":null,"request_id":"req_mock_u1p74ftz"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   94853ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[   94853ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[   94853ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"component":"orchestrator","status":"gre…}],"error":null,"request_id":"req_mock_392cdlga"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244
+[   99763ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /demo
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   99882ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=363a605a:17221
+[  100012ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2476
+[  100012ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2477
+[  100012ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2478
+[  100012ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2479
+[  100012ms] [LOG] Client ID: %s (%s) dcf9314b-ba53-46f2-a4a6-7cb62545d38f top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=363a605a:2480
+[  100201ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:242
+[  100201ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:243
+[  100201ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"component":"orchestrator","status":"gre…}],"error":null,"request_id":"req_mock_raazay5k"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=363a605a:244

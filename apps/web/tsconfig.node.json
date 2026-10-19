@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "strict": true,
+    "noEmit": false,
+    "emitDeclarationOnly": false,
+    "outDir": "node_modules/.tsbuild-node",
+    "skipLibCheck": true
+  },
+  "include": ["vite.config.ts", "eslint.config.js", "scripts/**/*.mjs", "mock-server/**/*.mjs"]
+}

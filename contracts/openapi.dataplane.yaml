@@ -1,0 +1,415 @@
+openapi: 3.0.3
+info:
+  title: ZeroTrace Data Plane API
+  version: 1.0.0
+  description: >
+    Data Plane engine interface (Iceberg Lakehouse, pgvector AI memory, Redis semantic cache).
+    Simulated company data stack, physical & cryptographic erasure, and adversarial audit engine.
+servers:
+  - url: http://localhost:8002
+    description: Local development data plane
+  - url: http://data-plane:8002
+    description: Docker internal network
+
+security:
+  - ServiceKeyAuth: []
+
+paths:
+  /health:
+    get:
+      summary: Liveness health check
+      security: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /v1/health/deep:
+    get:
+      summary: Deep health check of all underlying stores and runtimes
+      security: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  spark_warm:
+                    type: boolean
+                  s3_ok:
+                    type: boolean
+                  pg_ok:
+                    type: boolean
+                  redis_ok:
+                    type: boolean
+                  versions:
+                    type: object
+
+  /v1/inventory:
+    get:
+      summary: Get inventory of lakehouse tables, vector stores, and cache keyspaces
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/locate:
+    post:
+      summary: Locate all occurrences of identifiers across relational, lakehouse, vector, and cache
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [identifiers]
+              properties:
+                identifiers:
+                  type: array
+                  items:
+                    type: object
+                    required: [type, value]
+                    properties:
+                      type:
+                        type: string
+                        example: phone
+                      value:
+                        type: string
+                        example: "+919876543210"
+                variants:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/erasure/plan:
+    post:
+      summary: Calculate targeted erasure plan with blast-radius Bloom filter analysis and cost model
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, subject_ref, identifiers]
+              properties:
+                job_id:
+                  type: string
+                subject_ref:
+                  type: string
+                identifiers:
+                  type: array
+                  items:
+                    type: object
+                holds:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      category_or_table:
+                        type: string
+                      legal_basis:
+                        type: string
+                      release_date:
+                        type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/erasure/execute:
+    post:
+      summary: Execute tri-layer erasure (Lakehouse, Vector, Cache)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, plan_id]
+              properties:
+                job_id:
+                  type: string
+                plan_id:
+                  type: string
+                mode:
+                  type: string
+                  enum: [both, crypto_only, physical_only]
+                  default: both
+      responses:
+        '202':
+          description: Erasure execution initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/jobs/{job_id}:
+    get:
+      summary: Get execution job status and metrics
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/jobs/{job_id}/events:
+    get:
+      summary: Stream job events via SSE
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event stream (text/event-stream)
+          content:
+            text/event-stream:
+              schema:
+                type: string
+
+  /v1/erasure/remediate:
+    post:
+      summary: Perform targeted re-erasure for residual locations identified during adversarial audit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, residual_locations]
+              properties:
+                job_id:
+                  type: string
+                residual_locations:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/audit/run:
+    post:
+      summary: Run full adversarial red-team audit suite and collateral integrity test
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, identifiers]
+              properties:
+                job_id:
+                  type: string
+                identifiers:
+                  type: array
+                  items:
+                    type: object
+                attacks:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/state/manifest:
+    post:
+      summary: Retrieve canonical pre-purge or post-purge state manifest for Merkle root computation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [job_id, label]
+              properties:
+                job_id:
+                  type: string
+                label:
+                  type: string
+                  enum: [pre, post]
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/attack/{type}:
+    post:
+      summary: Run an individual attack against the storage layers
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - time_travel
+              - raw_parquet
+              - bucket_grep
+              - s3_versions
+              - vector_lookup
+              - rag_prompt_injection
+              - cache_probe
+              - dead_tuples
+              - collateral
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subject_id:
+                  type: string
+                identifiers:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/demo/seed:
+    post:
+      summary: Populate dataset (small or showtime 50k rows / 480 Parquet files)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                profile:
+                  type: string
+                  enum: [small, showtime]
+                  default: showtime
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/demo/reset:
+    post:
+      summary: Reset demo dataset to deterministic baseline state
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/demo/naive-delete:
+    post:
+      summary: Perform naive SQL DELETE reproducing the three traps (for demo cold open)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subject_id:
+                  type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/demo/subjects:
+    get:
+      summary: Retrieve demo hero and decoy subject descriptors
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+  /v1/demo/scenario:
+    post:
+      summary: Configure demo scenario flags (e.g. ghost_miss for self-healing demonstration)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ghost_miss:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataPlaneEnvelope'
+
+components:
+  securitySchemes:
+    ServiceKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Service-Key
+
+  schemas:
+    DataPlaneEnvelope:
+      type: object
+      required: [data, error, request_id]
+      properties:
+        data:
+          type: object
+          nullable: true
+        error:
+          type: object
+          nullable: true
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+        request_id:
+          type: string

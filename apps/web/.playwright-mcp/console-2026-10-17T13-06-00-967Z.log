@@ -1,0 +1,78 @@
+[    1263ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=2844143b:17221
+[    1396ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=2844143b:2476
+[    1396ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=2844143b:2477
+[    1396ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=2844143b:2478
+[    1396ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=2844143b:2479
+[    1396ms] [LOG] Client ID: %s (%s) c5cd5420-f5d4-4213-9858-9a19afefde00 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=2844143b:2480
+[    1879ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[    2240ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[    2327ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[    2327ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[    2327ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[    2327ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[    2327ms] [LOG] Client ID: %s (%s) 11dce3e1-3c30-4e9a-96d8-8f81a15e2c09 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[   46095ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   46202ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[   46284ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[   46284ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[   46284ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[   46284ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[   46284ms] [LOG] Client ID: %s (%s) 0b39419f-f802-49af-8f85-d600c103b8b2 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[   46812ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   46856ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[   46885ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[   46885ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[   46885ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[   46885ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[   46885ms] [LOG] Client ID: %s (%s) dbfee9ca-37f1-4455-9855-02a217908691 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[   47444ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   47528ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[   47571ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[   47571ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[   47571ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[   47571ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[   47571ms] [LOG] Client ID: %s (%s) cb5e852d-f9c3-4237-8242-0395a8f3f23b top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[   48109ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[   48156ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[   48194ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[   48194ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[   48194ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[   48194ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[   48194ms] [LOG] Client ID: %s (%s) 1779589c-5b6f-4bef-9a26-a73f6a9dce7b top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[   53693ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   53696ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   53696ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K3P8N5TQ3P5N7HD…}],"error":null,"request_id":"req_mock_bk1l0s27"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[   62350ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   62350ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   62350ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K3P8N5TQ3P5N7HD…}],"error":null,"request_id":"req_mock_h68cgl9g"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[   71610ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   71610ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   71610ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"component":"orchestrator","status":"gre…}],"error":null,"request_id":"req_mock_f4ujkupa"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[   86779ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   86779ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   86779ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"component":"orchestrator","status":"gre…}],"error":null,"request_id":"req_mock_4f2qwrz5"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244

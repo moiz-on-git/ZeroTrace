@@ -1,0 +1,251 @@
+{
+  "title": "ZeroTrace Cryptographic Proof Reference Test Vectors",
+  "description": "Standard test vectors for browser-side verification and cross-language compatibility",
+  "keys": {
+    "private_key_hex": "9d61b19deffd5a60ba844af492ec2cc44449c5697b326919703bac031cae7f60",
+    "public_key_hex": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a"
+  },
+  "salts": {
+    "job_salt_hex": "a0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf",
+    "subject_salt_hex": "f0f1f2f3f4f5f6f7f8f9fafbfcfdfeff00112233445566778899aabbccddeeff"
+  },
+  "subject": {
+    "canonical_subject": "phone:+919876543210",
+    "expected_commitment": "66a73396e6981b23597612f4a44c19b3bcd5692d4ef2232213415a24c733b2f0"
+  },
+  "merkle_fixtures": {
+    "pre_items": [
+      {
+        "layer": "iceberg",
+        "object_id": "iceberg:customers:part-0001.parquet",
+        "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "in_scope": true,
+        "held": false
+      },
+      {
+        "layer": "iceberg",
+        "object_id": "iceberg:marketing:part-0012.parquet",
+        "content_hash": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb",
+        "in_scope": true,
+        "held": false
+      },
+      {
+        "layer": "vector",
+        "object_id": "vector:support_tickets:emb_001",
+        "content_hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+        "in_scope": true,
+        "held": false
+      },
+      {
+        "layer": "cache",
+        "object_id": "cache:semantic:q_loan_status",
+        "content_hash": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+        "in_scope": true,
+        "held": false
+      },
+      {
+        "layer": "relational",
+        "object_id": "relational:kyc_documents:row_9942",
+        "content_hash": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "in_scope": true,
+        "held": true
+      }
+    ],
+    "pre_leaves": [
+      "635fe608f62cfa832fd691b0416fc4663259efad5eded91d677dd34592c41db1",
+      "65b8b4455455e459f1a3345f7a240bafa75c7d1b84d3bec63940bd3f961783c6",
+      "39e5fb2facb076c86ee0b5ccf95200c76255b2d5a0b2d2b73ea2fe3382228172",
+      "88f51285568fe4c0017f3e32b5ea220ab741979e76c0d9307b4d1cb2b541f746",
+      "025b637c96cba7f50cbf247092135c33945f5fc61a5b4062c6e96825f33068d3"
+    ],
+    "pre_root": "690dcb517c3e309c5b9c03dc53ddce9a2f26fc1aac8ffd32a54ea39803494e15",
+    "post_items": [
+      {
+        "layer": "relational",
+        "object_id": "relational:kyc_documents:row_9942",
+        "content_hash": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+        "in_scope": true,
+        "held": true
+      }
+    ],
+    "post_leaves": [
+      "025b637c96cba7f50cbf247092135c33945f5fc61a5b4062c6e96825f33068d3"
+    ],
+    "post_root": "025b637c96cba7f50cbf247092135c33945f5fc61a5b4062c6e96825f33068d3",
+    "diff_leaves": [
+      "3121c0843ec8e0e3e7d7ba999f299da48209e551d0d8cce557dd1a5a01d73c81",
+      "27ea25e23b4b4f373b401aafb71b08fd6d682c008d45f097f08f5885287c4b6c",
+      "66292339872167589de15c95f38ac179e668a3bfcbb63cb0f2d73e6345db2b08",
+      "3697e5ab8cb716d05b672ca0fc674b6abcbeffb59279a0b2c5fe29e819f0b300",
+      "aa971eb3515075b7af412cd3a4fb132a04dd89f3518a63597f91e6c2a816d20c"
+    ],
+    "diff_root": "65b5f69ab8cb10381aa6d12f92cf52fb0040e7f5e04e6f74873fb1b3e2b429fa"
+  },
+  "receipts": {
+    "valid_receipt": {
+      "version": "1.0.0",
+      "receipt_id": "rcpt_01JB0000000000000000000001",
+      "job_id": "job_01JB0000000000000000000001",
+      "issued_at": "2026-10-17T10:00:00Z",
+      "policy_version": "dpdp-2023-v1.4",
+      "subject_commitment": "66a73396e6981b23597612f4a44c19b3bcd5692d4ef2232213415a24c733b2f0",
+      "pre_root": "690dcb517c3e309c5b9c03dc53ddce9a2f26fc1aac8ffd32a54ea39803494e15",
+      "post_root": "025b637c96cba7f50cbf247092135c33945f5fc61a5b4062c6e96825f33068d3",
+      "diff_root": "65b5f69ab8cb10381aa6d12f92cf52fb0040e7f5e04e6f74873fb1b3e2b429fa",
+      "leaf_counts": {
+        "iceberg": 2,
+        "vector": 1,
+        "cache": 1,
+        "relational": 1,
+        "total": 5
+      },
+      "items_erased_counts": {
+        "iceberg": 2,
+        "vector": 1,
+        "cache": 1,
+        "relational": 0,
+        "total": 4
+      },
+      "retention_holds": [
+        {
+          "category": "kyc_documents",
+          "legal_basis": "PMLA 2002 / RBI KYC Master Direction 2016 (5-year statutory lock)",
+          "release_date": "2031-10-17T10:00:00Z",
+          "count": 1
+        }
+      ],
+      "audit_summary": {
+        "attacks_run": 9,
+        "attacks_passed": 9,
+        "remediation_rounds": 1,
+        "collateral_integrity": true
+      },
+      "algorithm_descriptors": {
+        "hash_func": "SHA-256",
+        "leaf_domain_separator": "0x00",
+        "node_domain_separator": "0x01",
+        "signature_scheme": "Ed25519"
+      },
+      "anchor": {
+        "network": "ShipRite-AnchorNet",
+        "tx_hash": "0x4f83b128562d965e648b712b774d02633091df05c2a07c244b7d510df1ca7a20",
+        "block": 4829104,
+        "target": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        "explorer_url": "https://explorer.shiprite.io/tx/0x4f83b128562d965e648b712b774d02633091df05c2a07c244b7d510df1ca7a20",
+        "status": "CONFIRMED"
+      },
+      "signer_public_key": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "signature": "5ac6e3d42d37290ae8cd98d55f5a2de38d7255cf6515792c3e594bf5b2b3299ee10929e4ec166d70d9bde01f7a84f91d83c6503dfbaf7b7b9b821163eebbed0c"
+    },
+    "tampered_root_receipt": {
+      "version": "1.0.0",
+      "receipt_id": "rcpt_01JB0000000000000000000001",
+      "job_id": "job_01JB0000000000000000000001",
+      "issued_at": "2026-10-17T10:00:00Z",
+      "policy_version": "dpdp-2023-v1.4",
+      "subject_commitment": "66a73396e6981b23597612f4a44c19b3bcd5692d4ef2232213415a24c733b2f0",
+      "pre_root": "690dcb517c3e309c5b9c03dc53ddce9a2f26fc1aac8ffd32a54ea39803494e15",
+      "post_root": "025b637c96cba7f50cbf247092135c33945f5fc61a5b4062c6e96825f33068d3",
+      "diff_root": "65b5f69ab8cb10381aa6d12f92cf52fb0040e7f5e04e6f74873fb1b3e2b429f0",
+      "leaf_counts": {
+        "iceberg": 2,
+        "vector": 1,
+        "cache": 1,
+        "relational": 1,
+        "total": 5
+      },
+      "items_erased_counts": {
+        "iceberg": 2,
+        "vector": 1,
+        "cache": 1,
+        "relational": 0,
+        "total": 4
+      },
+      "retention_holds": [
+        {
+          "category": "kyc_documents",
+          "legal_basis": "PMLA 2002 / RBI KYC Master Direction 2016 (5-year statutory lock)",
+          "release_date": "2031-10-17T10:00:00Z",
+          "count": 1
+        }
+      ],
+      "audit_summary": {
+        "attacks_run": 9,
+        "attacks_passed": 9,
+        "remediation_rounds": 1,
+        "collateral_integrity": true
+      },
+      "algorithm_descriptors": {
+        "hash_func": "SHA-256",
+        "leaf_domain_separator": "0x00",
+        "node_domain_separator": "0x01",
+        "signature_scheme": "Ed25519"
+      },
+      "anchor": {
+        "network": "ShipRite-AnchorNet",
+        "tx_hash": "0x4f83b128562d965e648b712b774d02633091df05c2a07c244b7d510df1ca7a20",
+        "block": 4829104,
+        "target": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        "explorer_url": "https://explorer.shiprite.io/tx/0x4f83b128562d965e648b712b774d02633091df05c2a07c244b7d510df1ca7a20",
+        "status": "CONFIRMED"
+      },
+      "signer_public_key": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "signature": "5ac6e3d42d37290ae8cd98d55f5a2de38d7255cf6515792c3e594bf5b2b3299ee10929e4ec166d70d9bde01f7a84f91d83c6503dfbaf7b7b9b821163eebbed0c"
+    },
+    "tampered_signature_receipt": {
+      "version": "1.0.0",
+      "receipt_id": "rcpt_01JB0000000000000000000001",
+      "job_id": "job_01JB0000000000000000000001",
+      "issued_at": "2026-10-17T10:00:00Z",
+      "policy_version": "dpdp-2023-v1.4",
+      "subject_commitment": "66a73396e6981b23597612f4a44c19b3bcd5692d4ef2232213415a24c733b2f0",
+      "pre_root": "690dcb517c3e309c5b9c03dc53ddce9a2f26fc1aac8ffd32a54ea39803494e15",
+      "post_root": "025b637c96cba7f50cbf247092135c33945f5fc61a5b4062c6e96825f33068d3",
+      "diff_root": "65b5f69ab8cb10381aa6d12f92cf52fb0040e7f5e04e6f74873fb1b3e2b429fa",
+      "leaf_counts": {
+        "iceberg": 2,
+        "vector": 1,
+        "cache": 1,
+        "relational": 1,
+        "total": 5
+      },
+      "items_erased_counts": {
+        "iceberg": 2,
+        "vector": 1,
+        "cache": 1,
+        "relational": 0,
+        "total": 4
+      },
+      "retention_holds": [
+        {
+          "category": "kyc_documents",
+          "legal_basis": "PMLA 2002 / RBI KYC Master Direction 2016 (5-year statutory lock)",
+          "release_date": "2031-10-17T10:00:00Z",
+          "count": 1
+        }
+      ],
+      "audit_summary": {
+        "attacks_run": 9,
+        "attacks_passed": 9,
+        "remediation_rounds": 1,
+        "collateral_integrity": true
+      },
+      "algorithm_descriptors": {
+        "hash_func": "SHA-256",
+        "leaf_domain_separator": "0x00",
+        "node_domain_separator": "0x01",
+        "signature_scheme": "Ed25519"
+      },
+      "anchor": {
+        "network": "ShipRite-AnchorNet",
+        "tx_hash": "0x4f83b128562d965e648b712b774d02633091df05c2a07c244b7d510df1ca7a20",
+        "block": 4829104,
+        "target": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        "explorer_url": "https://explorer.shiprite.io/tx/0x4f83b128562d965e648b712b774d02633091df05c2a07c244b7d510df1ca7a20",
+        "status": "CONFIRMED"
+      },
+      "signer_public_key": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "signature": "5ac6e3d42d37290ae8cd98d55f5a2de38d7255cf6515792c3e594bf5b2b3299ee10929e4ec166d70d9bde01f7a84f91d83c6503dfbaf7b7b9b821163eebbed00"
+    }
+  }
+}

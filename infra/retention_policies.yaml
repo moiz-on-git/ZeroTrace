@@ -1,0 +1,46 @@
+# ZeroTrace DPDP Act & Statutory Retention Policy Rules
+# Version: dpdp-2023-v1.4
+# Note: All statutory mappings require human legal review.
+
+policies:
+  - category: "kyc"
+    action: "HOLD_THEN_ERASE"
+    duration_years: 5
+    legal_basis: "Prevention of Money Laundering Act, 2002 (PMLA) Section 12 & RBI Master Direction on KYC, 2016"
+    requires_legal_review: true
+    description: "Statutory mandatory record retention for financial customer due diligence."
+
+  - category: "financial"
+    action: "HOLD_THEN_ERASE"
+    duration_years: 5
+    legal_basis: "Companies Act, 2013 (Section 128) & RBI NBFC Account Books Preservation Guidelines"
+    requires_legal_review: true
+    description: "Financial transactions, loan ledgers, and repayment receipts."
+
+  - category: "identity"
+    action: "ERASE_NOW"
+    duration_years: 0
+    legal_basis: "Digital Personal Data Protection Act, 2023 (Section 12(1) & 6(4))"
+    requires_legal_review: true
+    description: "Customer master profiles, phone, email, and personal demographics."
+
+  - category: "marketing"
+    action: "ERASE_NOW"
+    duration_years: 0
+    legal_basis: "Digital Personal Data Protection Act, 2023 (Section 8(7) Purpose Limitation)"
+    requires_legal_review: true
+    description: "Ad tracking, marketing events, campaign engagement."
+
+  - category: "embedding"
+    action: "ERASE_NOW"
+    duration_years: 0
+    legal_basis: "DPDP Act, 2023 & Indian AI Privacy Safeguards"
+    requires_legal_review: true
+    description: "Vector embeddings, RAG transcripts, chat chunks in AI memory."
+
+  - category: "cache"
+    action: "ERASE_NOW"
+    duration_years: 0
+    legal_basis: "DPDP Act, 2023 Data Minimisation"
+    requires_legal_review: true
+    description: "LLM semantic cache entries and cached Q&A pairs in Redis."

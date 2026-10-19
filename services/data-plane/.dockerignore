@@ -1,0 +1,55 @@
+# ── .dockerignore — keep Docker build context small ──────────────────────────
+# Excludes everything not needed in the Docker image
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+*.egg-info/
+.eggs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker
+docker/
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Test artifacts
+test_results.txt
+final_test_results.txt
+*.tmp
+
+# Docs (not needed in runtime image)
+README.md
+CONTRACT_REQUESTS.md
+Makefile
+
+# Scripts (build-time only, not needed at runtime)
+scripts/run_*.py
+scripts/check_imports.py
+scripts/quick_test.py

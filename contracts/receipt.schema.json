@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zerotrace.dev/schemas/receipt.schema.json",
+  "title": "ZeroTraceReceipt",
+  "description": "Cryptographic, privacy-preserving erasure certificate verifiable client-side without PII retention",
+  "type": "object",
+  "required": [
+    "version",
+    "receipt_id",
+    "job_id",
+    "issued_at",
+    "policy_version",
+    "subject_commitment",
+    "pre_root",
+    "post_root",
+    "diff_root",
+    "leaf_counts",
+    "items_erased_counts",
+    "retention_holds",
+    "audit_summary",
+    "algorithm_descriptors",
+    "anchor",
+    "signer_public_key",
+    "signature"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^rcpt_[0-9A-Za-z]{26}$",
+      "description": "ULID prefixed with rcpt_"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^job_[0-9A-Za-z]{26}$",
+      "description": "ULID prefixed with job_"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 UTC timestamp of proof sealing"
+    },
+    "policy_version": {
+      "type": "string",
+      "description": "Version string of DPDP policy rules applied (e.g. dpdp-2023-v1.4)"
+    },
+    "subject_commitment": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256(subject_salt || canonical_subject). Sovereign proof secret kept by Data Principal."
+    },
+    "pre_root": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Merkle root over salted pre-purge storage state manifest"
+    },
+    "post_root": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Merkle root over salted post-purge storage state manifest"
+    },
+    "diff_root": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Merkle root over destroyed and lawfully held items difference set"
+    },
+    "leaf_counts": {
+      "type": "object",
+      "required": ["iceberg", "vector", "cache", "relational", "total"],
+      "properties": {
+        "iceberg": { "type": "integer" },
+        "vector": { "type": "integer" },
+        "cache": { "type": "integer" },
+        "relational": { "type": "integer" },
+        "total": { "type": "integer" }
+      }
+    },
+    "items_erased_counts": {
+      "type": "object",
+      "required": ["iceberg", "vector", "cache", "relational", "total"],
+      "properties": {
+        "iceberg": { "type": "integer" },
+        "vector": { "type": "integer" },
+        "cache": { "type": "integer" },
+        "relational": { "type": "integer" },
+        "total": { "type": "integer" }
+      }
+    },
+    "retention_holds": {
+      "type": "array",
+      "description": "Lawfully retained categories under statutory exemptions (e.g. PMLA/RBI 5-year lock)",
+      "items": {
+        "type": "object",
+        "required": ["category", "legal_basis", "release_date", "count"],
+        "properties": {
+          "category": { "type": "string" },
+          "legal_basis": { "type": "string" },
+          "release_date": { "type": "string", "format": "date-time" },
+          "count": { "type": "integer" }
+        }
+      }
+    },
+    "audit_summary": {
+      "type": "object",
+      "required": ["attacks_run", "attacks_passed", "remediation_rounds", "collateral_integrity"],
+      "properties": {
+        "attacks_run": { "type": "integer" },
+        "attacks_passed": { "type": "integer" },
+        "remediation_rounds": { "type": "integer" },
+        "collateral_integrity": { "type": "boolean" }
+      }
+    },
+    "algorithm_descriptors": {
+      "type": "object",
+      "required": ["hash_func", "leaf_domain_separator", "node_domain_separator", "signature_scheme"],
+      "properties": {
+        "hash_func": { "type": "string", "const": "SHA-256" },
+        "leaf_domain_separator": { "type": "string", "const": "0x00" },
+        "node_domain_separator": { "type": "string", "const": "0x01" },
+        "signature_scheme": { "type": "string", "const": "Ed25519" }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "required": ["network", "tx_hash", "block", "target", "explorer_url", "status"],
+      "properties": {
+        "network": { "type": "string" },
+        "tx_hash": { "type": "string" },
+        "block": { "type": "integer" },
+        "target": { "type": "string" },
+        "explorer_url": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "CONFIRMED", "SEALED"]
+        }
+      }
+    },
+    "signer_public_key": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "32-byte Ed25519 public key encoded as 64 hex characters"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{128}$",
+      "description": "64-byte Ed25519 digital signature of canonical receipt digest encoded as 128 hex characters"
+    }
+  },
+  "additionalProperties": false
+}

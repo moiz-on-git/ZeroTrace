@@ -1,0 +1,109 @@
+version: '3.8'
+
+networks:
+  zt-net:
+    name: zt-net
+    driver: bridge
+
+volumes:
+  pg_prod_data:
+  redis_prod_data:
+  caddy_data:
+  caddy_config:
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: zt-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - zt-net
+    depends_on:
+      - orchestrator
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: zt-postgres-prod
+    restart: always
+    environment:
+      POSTGRES_USER: ${ZT_POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${ZT_POSTGRES_PASSWORD:-ChangeThisInProd123!}
+    volumes:
+      - pg_prod_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/01-init.sql
+    networks:
+      - zt-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: zt-redis-prod
+    restart: always
+    command: redis-server --appendonly yes --requirepass ${ZT_REDIS_PASSWORD:-RedisPassword123!}
+    volumes:
+      - redis_prod_data:/data
+    networks:
+      - zt-net
+
+  orchestrator:
+    image: ghcr.io/zerotrace/orchestrator:latest
+    container_name: zt-orchestrator-prod
+    restart: always
+    environment:
+      ZT_ENV: production
+      ZT_PORT: 8001
+      ZT_DATABASE_URL: postgresql+asyncpg://${ZT_POSTGRES_USER:-postgres}:${ZT_POSTGRES_PASSWORD:-ChangeThisInProd123!}@postgres:5432/zt_app
+      ZT_REDIS_URL: redis://:${ZT_REDIS_PASSWORD:-RedisPassword123!}@redis:6379/1
+      ZT_DATAPLANE_URL: http://data-plane:8002
+      ZT_SERVICE_KEY: ${ZT_SERVICE_KEY}
+      ZT_JWT_SECRET: ${ZT_JWT_SECRET}
+      ZT_PEPPER_SECRET: ${ZT_PEPPER_SECRET}
+      ZT_SIGNER_PRIVATE_KEY: ${ZT_SIGNER_PRIVATE_KEY}
+      ZT_SARVAM_API_KEY: ${ZT_SARVAM_API_KEY}
+      ZT_ENABLE_OFFLINE_FALLBACK: "false"
+      ZT_ANCHOR_PROVIDER: ${ZT_ANCHOR_PROVIDER:-shiprite}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - zt-net
+
+  data-plane:
+    image: ghcr.io/zerotrace/data-plane:latest
+    container_name: zt-data-plane-prod
+    restart: always
+    environment:
+      ZT_PORT: 8002
+      ZT_SERVICE_KEY: ${ZT_SERVICE_KEY}
+      ZT_POSTGRES_URL: postgresql://${ZT_POSTGRES_USER:-postgres}:${ZT_POSTGRES_PASSWORD:-ChangeThisInProd123!}@postgres:5432/zt_rag
+      ZT_REDIS_URL: redis://:${ZT_REDIS_PASSWORD:-RedisPassword123!}@redis:6379/0
+      ZT_S3_BUCKET: ${ZT_S3_BUCKET}
+      AWS_REGION: ap-south-1
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - zt-net
+
+  web:
+    image: ghcr.io/zerotrace/web:latest
+    container_name: zt-web-prod
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - orchestrator
+    networks:
+      - zt-net
+

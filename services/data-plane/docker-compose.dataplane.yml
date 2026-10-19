@@ -1,0 +1,181 @@
+# ZeroTrace Data Plane — standalone docker-compose (Moiz's service only)
+# Run: docker compose -f docker-compose.dataplane.yml up -d
+# Ports: data-plane 8002, postgres 5432, redis 6379, minio 9000/9001
+#
+# Production notes:
+#   - Postgres: WAL tuning, connection pool, pgvector
+#   - Redis: AOF persistence, maxmemory policy
+#   - MinIO: versioning enabled by default
+#   - Data-plane: health checks, resource limits, graceful shutdown
+
+version: "3.9"
+
+networks:
+  zt-net:
+    driver: bridge
+
+volumes:
+  pg_data:
+  redis_data:
+  minio_data:
+  spark_ivy:
+
+services:
+
+  # ── Postgres (pgvector image, production-tuned) ───────────────────────────────
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: zt-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${ZT_PG_USER:-ztuser}
+      POSTGRES_PASSWORD: ${ZT_PG_PASSWORD:-changeme}
+      POSTGRES_DB: zt_app
+      # Production tuning
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    command: >
+      postgres
+        -c shared_buffers=512MB
+        -c effective_cache_size=2GB
+        -c maintenance_work_mem=128MB
+        -c wal_buffers=16MB
+        -c max_connections=100
+        -c random_page_cost=1.1
+        -c track_io_timing=on
+        -c log_min_duration_statement=500
+        -c shared_preload_libraries=pg_stat_statements
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./docker/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - zt-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${ZT_PG_USER:-ztuser} -d zt_app"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ── Redis (AOF persistence, memory limits) ──────────────────────────────────
+  redis:
+    image: redis:7.2-alpine
+    container_name: zt-redis
+    restart: unless-stopped
+    command: >
+      redis-server
+        --appendonly yes
+        --appendfsync everysec
+        --maxmemory 256mb
+        --maxmemory-policy allkeys-lru
+        --timeout 300
+        --tcp-keepalive 60
+        --loglevel warning
+        --save 300 10
+        --save 60 10000
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - zt-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ── MinIO (S3-compatible, versioning enabled) ──────────────────────────────
+  minio:
+    image: minio/minio:latest
+    container_name: zt-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${ZT_S3_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${ZT_S3_SECRET_KEY:-minioadmin}
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - zt-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ── MinIO setup (creates bucket + enables versioning) ──────────────────────
+  minio-setup:
+    image: minio/mc:latest
+    container_name: zt-minio-setup
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      MINIO_ROOT_USER: ${ZT_S3_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${ZT_S3_SECRET_KEY:-minioadmin}
+      BUCKET: ${ZT_S3_BUCKET:-kaveri-finserv-lake}
+    entrypoint: >
+      /bin/sh -c "
+        mc alias set local http://minio:9000 $$MINIO_ROOT_USER $$MINIO_ROOT_PASSWORD;
+        mc mb --ignore-existing local/$$BUCKET;
+        mc version enable local/$$BUCKET;
+        echo 'Bucket $$BUCKET ready with versioning';
+      "
+    networks:
+      - zt-net
+    restart: "no"
+
+  # ── Data Plane service (production) ───────────────────────────────────────────
+  data-plane:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zt-data-plane
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio-setup:
+        condition: service_completed_successfully
+    env_file:
+      - .env
+    environment:
+      ZT_PG_HOST: postgres
+      ZT_REDIS_HOST: redis
+      ZT_S3_ENDPOINT: http://minio:9000
+      ZT_ENV: ${ZT_ENV:-production}
+      ZT_LOG_LEVEL: ${ZT_LOG_LEVEL:-INFO}
+    ports:
+      - "8002:8002"
+    networks:
+      - zt-net
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8002/live"]
+      interval: 15s
+      timeout: 5s
+      start_period: 60s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+          cpus: "4.0"
+        reservations:
+          memory: 4G
+          cpus: "2.0"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    stop_grace_period: 15s
+    stop_signal: SIGTERM

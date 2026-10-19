@@ -1,0 +1,53 @@
+{
+  "include": [
+    "services/orchestrator/src",
+    "services/orchestrator/tests",
+    "demo",
+    "scripts",
+    "contracts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    ".git"
+  ],
+  "executionEnvironments": [
+    {
+      "root": "services/orchestrator/src",
+      "extraPaths": [
+        "services/orchestrator/src"
+      ]
+    },
+    {
+      "root": "demo",
+      "extraPaths": [
+        "services/orchestrator/src"
+      ]
+    },
+    {
+      "root": "scripts",
+      "extraPaths": [
+        "services/orchestrator/src"
+      ]
+    },
+    {
+      "root": "services/orchestrator/tests",
+      "extraPaths": [
+        "services/orchestrator/src"
+      ]
+    },
+    {
+      "root": ".",
+      "extraPaths": [
+        "services/orchestrator/src"
+      ]
+    }
+  ],
+  "extraPaths": [
+    "services/orchestrator/src",
+    "services/orchestrator"
+  ],
+  "typeCheckingMode": "off",
+  "reportMissingImports": "none",
+  "reportMissingTypeStubs": false
+}

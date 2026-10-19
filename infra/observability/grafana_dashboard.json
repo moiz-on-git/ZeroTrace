@@ -1,0 +1,84 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "DPDP Erasure Job Throughput",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "rate(zerotrace_jobs_completed_total[1m])",
+          "legendFormat": "Jobs/sec"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+      "id": 2,
+      "title": "Parquet Bloom Filter Pruning Efficiency",
+      "type": "gauge",
+      "targets": [
+        {
+          "expr": "zerotrace_bloom_prune_ratio",
+          "legendFormat": "Pruned %"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+      "id": 3,
+      "title": "Merkle Tree Construction Latency (ms)",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "zerotrace_merkle_build_duration_ms",
+          "legendFormat": "Duration"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 10, "w": 12, "x": 0, "y": 8 },
+      "id": 4,
+      "title": "TigerData 9-Vector Red-Team Audit Events",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "rate(zerotrace_telemetry_events_total[1m])",
+          "legendFormat": "{{vector}}"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 10, "w": 12, "x": 12, "y": 8 },
+      "id": 5,
+      "title": "Backboard AI Agent Memory Amnesia Score",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "zerotrace_amnesia_cosine_similarity",
+          "legendFormat": "Cosine Similarity (Target 0.000)"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["zerotrace", "dpdp", "compliance", "sre"],
+  "time": { "from": "now-15m", "to": "now" },
+  "title": "ZeroTrace DPDP Act SRE Compliance Telemetry",
+  "uid": "zerotrace-sre-v1",
+  "version": 1
+}

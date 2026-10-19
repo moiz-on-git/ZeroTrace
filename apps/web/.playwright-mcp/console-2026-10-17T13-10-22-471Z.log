@@ -1,0 +1,171 @@
+[      16ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[     130ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[     198ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[     198ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[     198ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[     198ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[     198ms] [LOG] Client ID: %s (%s) 64c53012-cd93-46bb-8dad-e06cb14bdfa8 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[   25165ms] [LOG] Request {url: URL, method: POST, headers: Object, body: {"text":"I withdraw my consent. Erase all my perso… now. Phone 98XXXXXX04.","language_hint":"en-IN"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   25165ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   25165ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":{"request_id":"req_mock_zz8lw2cj","job_id"…"},"error":null,"request_id":"req_mock_a642z9au"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[   32984ms] [LOG] Request {url: URL, method: POST, headers: Object, body: {"code":"230671"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   32985ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   32985ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":{"verified":true},"error":null,"request_id":"req_mock_vbiawrr6"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[   32995ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[   32995ms] [LOG] Handler: ServerSentEventHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[   32995ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: [streaming]} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[   33060ms] [LOG] [data:{"seq":1,"ts":"2026-10-17T09:30:00.000Z","job…"voice","language":"kn-IN","audio_bytes":214088}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   34501ms] [LOG] [data:{"seq":2,"ts":"2026-10-17T09:30:01.430Z","job…cript streaming.","data":{"transcript_chars":41}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   35482ms] [LOG] [data:{"seq":3,"ts":"2026-10-17T09:30:02.405Z","job…nfidence 0.94).","data":{"transcript_chars":103}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   35760ms] [LOG] [data:{"seq":4,"ts":"2026-10-17T09:30:02.667Z","job…ata":{"transcript_chars":103,"language":"kn-IN"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   36072ms] [LOG] [data:{"seq":5,"ts":"2026-10-17T09:30:02.977Z","job…emma (adapter)","prompt_injection_scan":"clean"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   37912ms] [LOG] [data:{"seq":6,"ts":"2026-10-17T09:30:04.807Z","job…:"WITHDRAW_CONSENT_AND_ERASE","confidence":0.96}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   38426ms] [LOG] [data:{"seq":7,"ts":"2026-10-17T09:30:05.319Z","job… generated for matching.","data":{"variants":11}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   38612ms] [LOG] [data:{"seq":8,"ts":"2026-10-17T09:30:05.502Z","job…a":{"identifiers_extracted":3,"confidence":0.96}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   38672ms] [LOG] [data:{"seq":9,"ts":"2026-10-17T09:30:05.502Z","job…{"provider":"gemma (adapter)","mode":"tool-use"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   39498ms] [LOG] [data:{"seq":10,"ts":"2026-10-17T09:30:06.314Z","jo…tomers","layer":"relational","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   39961ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   40324ms] [LOG] [data:{"seq":11,"ts":"2026-10-17T09:30:07.126Z","jo…cations","layer":"relational","decision":"hold"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   41145ms] [LOG] [data:{"seq":12,"ts":"2026-10-17T09:30:07.938Z","jo…cuments","layer":"relational","decision":"hold"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   41382ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   41972ms] [LOG] [data:{"seq":13,"ts":"2026-10-17T09:30:08.750Z","jo…ayments","layer":"relational","decision":"hold"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   42797ms] [LOG] [data:{"seq":14,"ts":"2026-10-17T09:30:09.562Z","jo…ickets","layer":"relational","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   43626ms] [LOG] [data:{"seq":15,"ts":"2026-10-17T09:30:10.374Z","jo…cripts","layer":"relational","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   44192ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   44452ms] [LOG] [data:{"seq":16,"ts":"2026-10-17T09:30:11.186Z","jo…events","layer":"relational","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   45276ms] [LOG] [data:{"seq":17,"ts":"2026-10-17T09:30:11.998Z","jo…customers","layer":"iceberg","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   46099ms] [LOG] [data:{"seq":18,"ts":"2026-10-17T09:30:12.810Z","jo…plications","layer":"iceberg","decision":"hold"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   46917ms] [LOG] [data:{"seq":19,"ts":"2026-10-17T09:30:13.622Z","jo…_documents","layer":"iceberg","decision":"hold"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   47733ms] [LOG] [data:{"seq":20,"ts":"2026-10-17T09:30:14.434Z","jo…i.payments","layer":"iceberg","decision":"hold"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   48554ms] [LOG] [data:{"seq":21,"ts":"2026-10-17T09:30:15.246Z","jo…t_tickets","layer":"iceberg","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   49209ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   49377ms] [LOG] [data:{"seq":22,"ts":"2026-10-17T09:30:16.058Z","jo…anscripts","layer":"iceberg","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   50205ms] [LOG] [data:{"seq":23,"ts":"2026-10-17T09:30:16.870Z","jo…ng_events","layer":"iceberg","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   51031ms] [LOG] [data:{"seq":24,"ts":"2026-10-17T09:30:17.682Z","jo…ort_chunks","layer":"vector","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   51855ms] [LOG] [data:{"seq":25,"ts":"2026-10-17T09:30:18.494Z","jo…ipt_chunks","layer":"vector","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   52679ms] [LOG] [data:{"seq":26,"ts":"2026-10-17T09:30:19.306Z","jo…antic_cache","layer":"cache","decision":"erase"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   53099ms] [LOG] [data:{"seq":27,"ts":"2026-10-17T09:30:19.717Z","jo…","data":{"nodes":17,"edges":17,"agent_steps":8}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   53161ms] [LOG] [data:{"seq":28,"ts":"2026-10-17T09:30:19.717Z","jo…ed (rules/retention.yaml v2026.10.1).","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   53590ms] [LOG] [data:{"seq":29,"ts":"2026-10-17T09:30:20.137Z","jo…data":{"hold_categories":0,"erase_categories":7}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   53652ms] [LOG] [data:{"seq":30,"ts":"2026-10-17T09:30:20.137Z","jo… erasure plan from the locator index.","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   54228ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   54644ms] [LOG] [data:{"seq":31,"ts":"2026-10-17T09:30:21.123Z","jo…argeted":4,"bloom_false_positive_rate":0.000001}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   55060ms] [LOG] [data:{"seq":32,"ts":"2026-10-17T09:30:21.525Z","jo…:1046,"cost_targeted_inr":278,"saving_pct":73.4}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   55281ms] [LOG] [data:{"seq":33,"ts":"2026-10-17T09:30:21.742Z","jo…BJ6Q4R8T2W5M9NFHD3K7YP","steps":13,"warnings":2}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   55343ms] [LOG] [data:{"seq":34,"ts":"2026-10-17T09:30:21.742Z","jo…iting DPO approval (hold-to-confirm).","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   55656ms] [LOG] [data:{"seq":35,"ts":"2026-10-17T09:30:22.042Z","jo… not erase without a human signature.","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   59234ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   60316ms] [LOG] [data:{"seq":36,"ts":"2026-10-17T09:30:26.692Z","jo…proved_by":"dpo@demo (role dpo)","wait_ms":4650}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   60519ms] [LOG] [data:{"seq":37,"ts":"2026-10-17T09:30:26.882Z","jo…ution begins in three parallel lanes.","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   60582ms] [LOG] [data:{"seq":38,"ts":"2026-10-17T09:30:26.882Z","jo…data keys.","data":{"mode":"envelope-key-shred"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   60880ms] [LOG] [data:{"seq":39,"ts":"2026-10-17T09:30:27.169Z","jo…:1,"bytes_under_key":41335291,"duration_ms":287}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   60941ms] [LOG] [data:{"seq":40,"ts":"2026-10-17T09:30:27.169Z","jo…ed (merge-on-read; S3 versioning on).","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   62591ms] [LOG] [data:{"seq":41,"ts":"2026-10-17T09:30:28.809Z","jo…a":{"rows_deleted":2412,"rewritten_file_ids":[]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   64245ms] [ERROR] Failed to load resource: the server responded with a status of 502 (Bad Gateway) @ http://localhost:3000/api/v1/jobs/job_01J8BJ0M3Q7W4N8H2RGT6EK9XC/events:0
+[   64805ms] [LOG] [data:{"seq":42,"ts":"2026-10-17T09:30:31.019Z","jo…ten":2310022,"rewritten_file_ids":["file_0074"]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   67219ms] [LOG] [data:{"seq":43,"ts":"2026-10-17T09:30:33.421Z","jo…ten":4508118,"rewritten_file_ids":["file_0091"]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   69601ms] [LOG] [data:{"seq":44,"ts":"2026-10-17T09:30:35.797Z","jo…ten":6651940,"rewritten_file_ids":["file_0131"]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   69664ms] [LOG] [data:{"seq":45,"ts":"2026-10-17T09:30:35.797Z","jo…: support_chunks, transcript_chunks).","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   71470ms] [LOG] [data:{"seq":46,"ts":"2026-10-17T09:30:37.591Z","jo…ata":{"vectors_deleted":118,"vectors_total":412}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   73039ms] [LOG] [data:{"seq":47,"ts":"2026-10-17T09:30:39.157Z","jo…a":{"vectors_deleted":247,"dead_tuples_seen":61}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   73942ms] [LOG] [data:{"seq":48,"ts":"2026-10-17T09:30:40.049Z","jo…ten":6904502,"rewritten_file_ids":["file_0183"]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   76814ms] [LOG] [data:{"seq":49,"ts":"2026-10-17T09:30:42.919Z","jo…en":10902117,"rewritten_file_ids":["file_0295"]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   76875ms] [LOG] [data:{"seq":50,"ts":"2026-10-17T09:30:42.919Z","jo… started (redis db0, semantic cache).","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   77983ms] [LOG] [data:{"seq":51,"ts":"2026-10-17T09:30:44.021Z","jo…ed cache keys…","data":{"cache_keys_deleted":37}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   78791ms] [LOG] [data:{"seq":52,"ts":"2026-10-17T09:30:44.826Z","jo…ntagged_deleted":3,"persistence_rewritten":true}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   79708ms] [LOG] [data:{"seq":53,"ts":"2026-10-17T09:30:45.729Z","jo…nts…","data":{"sweep_queries":11,"candidates":2}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   80324ms] [LOG] [data:{"seq":54,"ts":"2026-10-17T09:30:46.340Z","jo…vectors_deleted":412,"dead_tuples_vacuumed":118}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   82985ms] [LOG] [data:{"seq":55,"ts":"2026-10-17T09:30:49.001Z","jo…en":12470016,"rewritten_file_ids":["file_0306"]}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   84614ms] [LOG] [data:{"seq":56,"ts":"2026-10-17T09:30:50.615Z","jo… horizon closed.","data":{"snapshots_expired":7}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   85768ms] [LOG] [data:{"seq":57,"ts":"2026-10-17T09:30:51.762Z","jo…phan_files_removed":23,"bytes_shredded":4391588}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   86733ms] [LOG] [data:{"seq":58,"ts":"2026-10-17T09:30:52.719Z","jo…s scrubbed.","data":{"metadata_files_removed":4}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   88032ms] [LOG] [data:{"seq":59,"ts":"2026-10-17T09:30:54.013Z","jo…ct_versions_deleted":9,"bytes_shredded":8208391}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   88654ms] [LOG] [data:{"seq":60,"ts":"2026-10-17T09:30:54.624Z","jo…ta_files_removed":4,"object_versions_deleted":9}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   88717ms] [LOG] [data:{"seq":61,"ts":"2026-10-17T09:30:54.624Z","jo…red-teaming our own erasure.","data":{"round":1}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   90370ms] [LOG] [data:{"seq":62,"ts":"2026-10-17T09:30:56.264Z","jo…,"verdict":"NOT_FOUND","checked":13,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   92023ms] [LOG] [data:{"seq":63,"ts":"2026-10-17T09:30:57.904Z","jo…"verdict":"NOT_FOUND","checked":480,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   93669ms] [LOG] [data:{"seq":64,"ts":"2026-10-17T09:30:59.544Z","jo…verdict":"NOT_FOUND","checked":1293,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   95310ms] [LOG] [data:{"seq":65,"ts":"2026-10-17T09:31:01.184Z","jo…verdict":"NOT_FOUND","checked":1588,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   96956ms] [LOG] [data:{"seq":66,"ts":"2026-10-17T09:31:02.824Z","jo…,"verdict":"NOT_FOUND","checked":46,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[   98607ms] [LOG] [data:{"seq":67,"ts":"2026-10-17T09:31:04.464Z","jo…,"verdict":"NOT_FOUND","checked":12,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  100257ms] [LOG] [data:{"seq":68,"ts":"2026-10-17T09:31:06.104Z","jo…,"verdict":"NOT_FOUND","checked":24,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  101910ms] [LOG] [data:{"seq":69,"ts":"2026-10-17T09:31:07.744Z","jo…","verdict":"NOT_FOUND","checked":2,"matches":0}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  105027ms] [LOG] [data:{"seq":70,"ts":"2026-10-17T09:31:10.855Z","jo…other_subjects_affected":0,"decoys_untouched":2}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  105450ms] [LOG] [data:{"seq":71,"ts":"2026-10-17T09:31:11.274Z","jo…ro residue.","data":{"verdict":"PASS","round":1}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  105512ms] [LOG] [data:{"seq":72,"ts":"2026-10-17T09:31:11.274Z","jo…rees (privacy-preserving commitment).","data":{}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  106382ms] [LOG] [data:{"seq":73,"ts":"2026-10-17T09:31:12.140Z","jo…or":412,"cache":61,"relational":16840,"held":0}}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  107124ms] [LOG] [data:{"seq":74,"ts":"2026-10-17T09:31:12.873Z","jo…g":218,"vector":412,"cache":61,"relational":12}}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  107482ms] [LOG] [data:{"seq":75,"ts":"2026-10-17T09:31:13.230Z","jo…00c8daa2d28b9b9f3d1641cec52c0bd9600a49891f0bfa"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  107543ms] [LOG] [data:{"seq":76,"ts":"2026-10-17T09:31:13.230Z","jo…sepolia).","data":{"network":"ethereum-sepolia"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  108432ms] [LOG] [data:{"seq":77,"ts":"2026-10-17T09:31:14.116Z","jo…r blocks the receipt.","data":{"submitted":true}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  110650ms] [LOG] [data:{"seq":78,"ts":"2026-10-17T09:31:16.330Z","jo…1cfad8b69472503e1cfad8b69","status":"confirmed"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  110714ms] [LOG] [data:{"seq":79,"ts":"2026-10-17T09:31:16.330Z","jo…,"receipt_id":"rcpt_01J8BK9Z2D5XW6TQN8HVF1P3LB"}}, , ] @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:718
+[  110714ms] [LOG] Handler: ServerSentEventHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:728
+[  188205ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[  188237ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[  188237ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[  188237ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[  188237ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[  188237ms] [LOG] Client ID: %s (%s) ce96d834-d356-40ac-88c5-a996df8d179e top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[  189053ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[  189112ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[  189140ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[  189140ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[  189140ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[  189140ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[  189140ms] [LOG] Client ID: %s (%s) 4fba8fe5-fc5f-4916-b8f5-405788458a8c top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[  189594ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /portal
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[  189636ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[  189667ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[  189667ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[  189667ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[  189667ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[  189667ms] [LOG] Client ID: %s (%s) 8e864d88-14ae-4807-b93e-60b5aa36386d top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[  216399ms] [LOG] Request {url: URL, method: POST, headers: Object, body: {"text":"101\n23333131313","language_hint":"en-IN"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[  216399ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[  216399ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":{"request_id":"req_mock_cpt405xi","job_id"…"},"error":null,"request_id":"req_mock_jg2ihdaj"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[  220796ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[  220796ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[  220796ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_mock_cpt405xi","job_id…}],"error":null,"request_id":"req_mock_uhzmqe9u"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244
+[  306710ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /verify
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[  306761ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[  306796ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[  306796ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[  306796ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[  306796ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[  306796ms] [LOG] Client ID: %s (%s) 676a1463-4f66-4399-9fa0-8dd9a55cabbb top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[  307418ms] [WARNING] [MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /verify
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/http/intercepting-requests @ http://localhost:3000/@vite/client:356
+[  307459ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/react-dom-du-XaUz4.js?v=393bab4c:17221
+[  307489ms] [LOG] %cDocumentation: %chttps://mswjs.io/docs font-weight:bold font-weight:normal @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2476
+[  307489ms] [LOG] Found an issue? https://github.com/mswjs/msw/issues @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2477
+[  307489ms] [LOG] Worker script URL: http://localhost:3000/mockServiceWorker.js @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2478
+[  307489ms] [LOG] Worker scope: http://localhost:3000/ @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2479
+[  307489ms] [LOG] Client ID: %s (%s) 0f08e881-b325-4433-940d-2009cb3d23a9 top-level @ http://localhost:3000/node_modules/.vite/deps/msw_browser.js?v=393bab4c:2480
+[  327058ms] [LOG] Request {url: URL, method: GET, headers: Object, body: } @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:242
+[  327058ms] [LOG] Handler: HttpHandler @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:243
+[  327058ms] [LOG] Response {status: 200, statusText: OK, headers: Object, body: {"data":[{"request_id":"req_01J8BJ0K3P8N5TQ3P5N7HD…}],"error":null,"request_id":"req_mock_xg25fenf"}} @ http://localhost:3000/node_modules/.vite/deps/msw.js?v=393bab4c:244

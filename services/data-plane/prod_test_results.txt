@@ -1,0 +1,70 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.8, pytest-9.1.1, pluggy-1.7.0
+rootdir: C:\Users\<user>\Desktop\ZeroTrace\services\data-plane
+configfile: pyproject.toml
+plugins: anyio-4.15.1, Faker-40.43.0, platformdirs-4.12.4, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 61 items
+
+tests\test_prod_hardening.py ..........F.....                            [ 26%]
+tests\test_api_health.py .......                                         [ 37%]
+tests\test_seed_determinism.py .......                                   [ 49%]
+tests\test_bloom_index.py ...                                            [ 54%]
+tests\test_attack_masking.py ........                                    [ 67%]
+tests\test_planner.py ....                                               [ 73%]
+tests\test_retention_vault.py .....                                      [ 81%]
+tests\test_ghost_embedding.py ....                                       [ 88%]
+tests\test_pii_redaction.py ....                                         [ 95%]
+tests\test_idempotency.py s..                                            [100%]
+
+================================== FAILURES ===================================
+________________ test_validation_error_for_missing_identifiers ________________
+tests\test_prod_hardening.py:115: in test_validation_error_for_missing_identifiers
+    assert resp.status_code in (400, 422)
+E   assert 500 in (400, 422)
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+---------------------------- Captured stdout call -----------------------------
+{"table": "customers", "error": "Could not connect to the endpoint URL: \"http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fcustomers%2F&encoding-type=url\"", "event": "locate.iceberg_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:48:19.119039Z"}
+{"table": "kyc_documents", "error": "Could not connect to the endpoint URL: \"http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fkyc_documents%2F&encoding-type=url\"", "event": "locate.iceberg_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:48:36.960598Z"}
+{"table": "loan_applications", "event": "locator.no_pii_cols", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "info", "logger": "locator", "timestamp": "2026-10-17T13:48:36.961869Z"}
+{"table": "payments", "event": "locator.no_pii_cols", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "info", "logger": "locator", "timestamp": "2026-10-17T13:48:36.963559Z"}
+{"table": "support_tickets", "error": "Could not connect to the endpoint URL: \"http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fsupport_tickets%2F&encoding-type=url\"", "event": "locate.iceberg_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:48:56.280976Z"}
+{"table": "call_transcripts", "error": "Could not connect to the endpoint URL: \"http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fcall_transcripts%2F&encoding-type=url\"", "event": "locate.iceberg_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:49:17.298855Z"}
+{"table": "marketing_events", "error": "Could not connect to the endpoint URL: \"http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fmarketing_events%2F&encoding-type=url\"", "event": "locate.iceberg_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:49:35.322270Z"}
+{"error": "connection timeout expired\nMultiple connection attempts failed. All failures were:\n- host: 'localhost', port: '5432', hostaddr: '::1': connection timeout expired\n- host: 'localhost', port: '5432', hostaddr: '127.0.0.1': connection timeout expired", "event": "locate.vector_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:53:55.401241Z"}
+{"error": "Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.", "event": "locate.cache_failed", "request_id": "corr_ee9f1b97e7fa4143", "correlation_id": "corr_ee9f1b97e7fa4143", "level": "warning", "logger": "locate", "timestamp": "2026-10-17T13:54:44.591772Z"}
+{"path": "/v1/locate", "error": "UpstreamTimeoutError", "error_message": "Request timed out after 120s", "request_id": "req_e3c0021cbc94", "correlation_id": "corr_ee9f1b97e7fa4143", "event": "unhandled_exception", "level": "error", "logger": "main", "timestamp": "2026-10-17T13:54:44.668187Z"}
+{"event": "HTTP Request: POST http://testserver/v1/locate \"HTTP/1.1 500 Internal Server Error\"", "level": "info", "logger": "httpx", "timestamp": "2026-10-17T13:54:44.740807Z"}
+------------------------------ Captured log call ------------------------------
+WARNING  locate:locate.py:63 {'table': 'customers', 'error': 'Could not connect to the endpoint URL: "http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fcustomers%2F&encoding-type=url"', 'event': 'locate.iceberg_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:48:19.119039Z'}
+WARNING  locate:locate.py:63 {'table': 'kyc_documents', 'error': 'Could not connect to the endpoint URL: "http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fkyc_documents%2F&encoding-type=url"', 'event': 'locate.iceberg_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:48:36.960598Z'}
+INFO     locator:bloom_index.py:115 {'table': 'loan_applications', 'event': 'locator.no_pii_cols', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'info', 'logger': 'locator', 'timestamp': '2026-10-17T13:48:36.961869Z'}
+INFO     locator:bloom_index.py:115 {'table': 'payments', 'event': 'locator.no_pii_cols', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'info', 'logger': 'locator', 'timestamp': '2026-10-17T13:48:36.963559Z'}
+WARNING  locate:locate.py:63 {'table': 'support_tickets', 'error': 'Could not connect to the endpoint URL: "http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fsupport_tickets%2F&encoding-type=url"', 'event': 'locate.iceberg_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:48:56.280976Z'}
+WARNING  locate:locate.py:63 {'table': 'call_transcripts', 'error': 'Could not connect to the endpoint URL: "http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fcall_transcripts%2F&encoding-type=url"', 'event': 'locate.iceberg_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:49:17.298855Z'}
+WARNING  locate:locate.py:63 {'table': 'marketing_events', 'error': 'Could not connect to the endpoint URL: "http://localhost:9000/kaveri-finserv-lake?list-type=2&prefix=warehouse%2Fkaveri_finserv%2Fmarketing_events%2F&encoding-type=url"', 'event': 'locate.iceberg_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:49:35.322270Z'}
+WARNING  locate:locate.py:93 {'error': "connection timeout expired\nMultiple connection attempts failed. All failures were:\n- host: 'localhost', port: '5432', hostaddr: '::1': connection timeout expired\n- host: 'localhost', port: '5432', hostaddr: '127.0.0.1': connection timeout expired", 'event': 'locate.vector_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:53:55.401241Z'}
+WARNING  locate:locate.py:135 {'error': 'Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.', 'event': 'locate.cache_failed', 'request_id': 'corr_ee9f1b97e7fa4143', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'level': 'warning', 'logger': 'locate', 'timestamp': '2026-10-17T13:54:44.591772Z'}
+ERROR    main:main.py:263 {'path': '/v1/locate', 'error': 'UpstreamTimeoutError', 'error_message': 'Request timed out after 120s', 'request_id': 'req_e3c0021cbc94', 'correlation_id': 'corr_ee9f1b97e7fa4143', 'event': 'unhandled_exception', 'level': 'error', 'logger': 'main', 'timestamp': '2026-10-17T13:54:44.668187Z'}
+INFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/v1/locate "HTTP/1.1 500 Internal Server Error"
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\<user>\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+src\main.py:31
+  C:\Users\<user>\Desktop\ZeroTrace\services\data-plane\src\main.py:31: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+src\main.py:31
+  C:\Users\<user>\Desktop\ZeroTrace\services\data-plane\src\main.py:31: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+tests/test_prod_hardening.py::test_readiness_endpoint
+  C:\Users\<user>\Desktop\ZeroTrace\services\data-plane\src\core\redis_client.py:65: DeprecationWarning: Call to '__init__' function with deprecated usage of input argument/s 'retry_on_timeout'. (TimeoutError is included by default.) -- Deprecated since version 6.0.0.
+    r = get_async_cache()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_prod_hardening.py::test_validation_error_for_missing_identifiers
+====== 1 failed, 59 passed, 1 skipped, 4 warnings in 1240.44s (0:20:40) =======

@@ -1,0 +1,1133 @@
+openapi: 3.0.3
+info:
+  title: ZeroTrace Orchestrator API
+  version: 1.0.0
+  description: >
+    ZeroTrace autonomous erasure & proof engine (Brain Plane & Proof Plane).
+    India's DPDP Act, 2023 compliant data destruction and verification infrastructure.
+servers:
+  - url: http://localhost:8001/api/v1
+    description: Local development orchestrator
+  - url: https://api.zerotrace.dev/api/v1
+    description: Production EC2 / Caddy
+
+security:
+  - BearerAuth: []
+  - {}
+
+paths:
+  /auth/demo-login:
+    post:
+      summary: Login to demo console and obtain a JWT
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [role]
+              properties:
+                role:
+                  type: string
+                  enum: [principal, dpo, auditor, admin]
+                  example: dpo
+      responses:
+        '200':
+          description: Successful authentication
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponseEnvelope'
+
+  /me:
+    get:
+      summary: Retrieve current authenticated identity and roles
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeResponseEnvelope'
+
+  /requests/voice:
+    post:
+      summary: Submit voice erasure request (multipart audio)
+      security: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [audio]
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                  description: Audio recording (webm, ogg, mp4, wav)
+                language_hint:
+                  type: string
+                  description: Optional BCP-47 or ISO code (e.g. kn-IN, hi-IN, ta-IN, te-IN, en-IN)
+                  example: kn-IN
+      responses:
+        '202':
+          description: Request accepted and intake started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestCreatedEnvelope'
+
+  /requests/text:
+    post:
+      summary: Submit text erasure request
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text:
+                  type: string
+                  example: "I withdraw my consent. Please erase all my personal data. My phone is +91 9876543210."
+                language:
+                  type: string
+                  example: en
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestCreatedEnvelope'
+
+  /webhooks/consent:
+    post:
+      summary: Ingest consent revocation webhook from existing consent managers
+      security: []
+      parameters:
+        - name: X-Consent-Signature
+          in: header
+          required: false
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [event, subject_identifier]
+              properties:
+                event:
+                  type: string
+                  example: consent.withdrawn
+                source:
+                  type: string
+                  example: Privy-IDfy
+                subject_identifier:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: phone
+                    value:
+                      type: string
+                      example: "+919876543210"
+                scope:
+                  type: string
+                  default: all
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestCreatedEnvelope'
+
+  /requests:
+    get:
+      summary: List all requests for DPO console
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestListEnvelope'
+
+  /requests/{id}:
+    get:
+      summary: Get details of an intake request
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestEnvelope'
+
+  /jobs/{id}:
+    get:
+      summary: Get job status and summary
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobEnvelope'
+
+  /jobs/{id}/events:
+    get:
+      summary: Stream job events via Server-Sent Events (SSE)
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Last-Event-ID
+          in: header
+          required: false
+          schema:
+            type: integer
+            description: Replay sequence from this event ID
+      responses:
+        '200':
+          description: Event stream (text/event-stream)
+          content:
+            text/event-stream:
+              schema:
+                type: string
+
+  /jobs/{id}/intent:
+    get:
+      summary: Get extracted legal intent card and statute references
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntentCardEnvelope'
+
+  /jobs/{id}/lineage:
+    get:
+      summary: Get discovered personal data lineage graph
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LineageEnvelope'
+
+  /jobs/{id}/plan:
+    get:
+      summary: Get targeted erasure plan, blast radius heat grid, and cost model
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanEnvelope'
+
+  /jobs/{id}/approve:
+    post:
+      summary: DPO approval to proceed with execution (or auto-approve)
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                approver_note:
+                  type: string
+                  example: "Verified statutory conditions. Approved for execution."
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionSuccessEnvelope'
+
+  /jobs/{id}/reject:
+    post:
+      summary: DPO rejection of erasure request
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [reason]
+              properties:
+                reason:
+                  type: string
+                  example: "Active loan outstanding; subject to statutory lock."
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionSuccessEnvelope'
+
+  /jobs/{id}/audit:
+    get:
+      summary: Get adversarial audit findings and collateral integrity report
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditEnvelope'
+
+  /jobs/{id}/agent-trace:
+    get:
+      summary: Get step-by-step LLM discovery agent trace
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentTraceEnvelope'
+
+  /receipts/{id}:
+    get:
+      summary: Get cryptographic receipt
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReceiptEnvelope'
+
+  /receipts/{id}/download:
+    get:
+      summary: Download receipt in requested format (json, pdf, pack)
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [json, pdf, pack]
+      responses:
+        '200':
+          description: File download
+          content:
+            application/json:
+              schema:
+                type: object
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+            application/zip:
+              schema:
+                type: string
+                format: binary
+
+  /receipts/{id}/certificate:
+    get:
+      summary: Get BSA 2023 Section 63 electronic evidence certificate
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CertificateEnvelope'
+
+  /verify:
+    post:
+      summary: Trustless public verification of receipt
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                receipt:
+                  $ref: '#/components/schemas/Receipt'
+                receipt_id:
+                  type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerificationResultEnvelope'
+
+  /attack/{type}:
+    post:
+      summary: Proxy adversary attack to Data Plane
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - time_travel
+              - raw_parquet
+              - bucket_grep
+              - s3_versions
+              - vector_lookup
+              - rag_prompt_injection
+              - cache_probe
+              - dead_tuples
+              - collateral
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subject_id:
+                  type: string
+                target:
+                  type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttackResultEnvelope'
+
+  /demo/reset:
+    post:
+      summary: Reset demo dataset and state
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionSuccessEnvelope'
+
+  /demo/seed:
+    post:
+      summary: Seed dataset (small or showtime)
+      security:
+        - BearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                profile:
+                  type: string
+                  enum: [small, showtime]
+                  default: showtime
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionSuccessEnvelope'
+
+  /system/preflight:
+    get:
+      summary: Aggregated preflight status of all subsystems
+      security: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreflightEnvelope'
+
+  /system/impact:
+    get:
+      summary: Aggregated impact metrics (shredded bytes, cost savings, jobs)
+      security: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImpactEnvelope'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    ErrorDetail:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          enum:
+            - VALIDATION_ERROR
+            - UNAUTHORIZED
+            - FORBIDDEN
+            - NOT_FOUND
+            - CONFLICT
+            - RATE_LIMITED
+            - UPSTREAM_UNAVAILABLE
+            - UPSTREAM_TIMEOUT
+            - AUDIT_FAILED
+            - POLICY_BLOCKED
+            - INTERNAL
+        message:
+          type: string
+        details:
+          type: object
+
+    EnvelopeBase:
+      type: object
+      required: [data, error, request_id]
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorDetail'
+          nullable: true
+        request_id:
+          type: string
+          example: req_01JB0000000000000000000001
+
+    AuthResponseEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                token:
+                  type: string
+                role:
+                  type: string
+                user:
+                  type: string
+
+    MeResponseEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                id:
+                  type: string
+                role:
+                  type: string
+                permissions:
+                  type: array
+                  items:
+                    type: string
+
+    RequestCreatedEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                request_id:
+                  type: string
+                job_id:
+                  type: string
+                status:
+                  type: string
+                subject_ref:
+                  type: string
+                receipt_secret:
+                  type: string
+                  description: Returned ONCE to Data Principal for sovereign ownership proof
+
+    RequestListEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/RequestItem'
+
+    RequestEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              $ref: '#/components/schemas/RequestItem'
+
+    RequestItem:
+      type: object
+      properties:
+        id:
+          type: string
+        job_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        channel:
+          type: string
+          enum: [voice, text, webhook]
+        language:
+          type: string
+        status:
+          type: string
+        subject_ref:
+          type: string
+        sla_seconds_remaining:
+          type: integer
+
+    JobEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              $ref: '#/components/schemas/Job'
+
+    Job:
+      type: object
+      properties:
+        id:
+          type: string
+        request_id:
+          type: string
+        status:
+          type: string
+          enum:
+            - RECEIVED
+            - PARSING
+            - DISCOVERING
+            - PLANNED
+            - AWAITING_APPROVAL
+            - EXECUTING
+            - AUDITING
+            - REMEDIATING
+            - PROVING
+            - ANCHORING
+            - COMPLETED
+            - COMPLETED_WITH_HOLDS
+            - FAILED
+            - REJECTED
+        subject_ref:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        stage_timeline:
+          type: array
+          items:
+            type: object
+            properties:
+              stage:
+                type: string
+              status:
+                type: string
+              started_at:
+                type: string
+              completed_at:
+                type: string
+              duration_ms:
+                type: integer
+        metrics_summary:
+          type: object
+
+    IntentCardEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                raw_transcript:
+                  type: string
+                detected_language:
+                  type: string
+                intent:
+                  type: string
+                  enum: [withdraw_consent, erase, access, correct]
+                confidence:
+                  type: number
+                masked_identifiers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      masked_value:
+                        type: string
+                statute_references:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      act:
+                        type: string
+                      section:
+                        type: string
+                      description:
+                        type: string
+                      requires_legal_review:
+                        type: boolean
+
+    LineageEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                nodes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      type:
+                        type: string
+                        enum: [subject, dataset, file, vector_namespace, cache_keyspace]
+                      label:
+                        type: string
+                      decision:
+                        type: string
+                        enum: [erase, hold, no_action]
+                      category:
+                        type: string
+                      meta:
+                        type: object
+                edges:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      source:
+                        type: string
+                      target:
+                        type: string
+                      relation:
+                        type: string
+
+    PlanEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                plan_id:
+                  type: string
+                steps:
+                  type: array
+                  items:
+                    type: object
+                blast_radius:
+                  type: object
+                  properties:
+                    files_total:
+                      type: integer
+                    files_targeted:
+                      type: integer
+                    partitions_total:
+                      type: integer
+                    partitions_targeted:
+                      type: integer
+                    bloom_false_positive_rate:
+                      type: number
+                    files_grid:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          file_id:
+                            type: string
+                          targeted:
+                            type: boolean
+                          partition:
+                            type: string
+                cost:
+                  type: object
+                  properties:
+                    naive_inr:
+                      type: number
+                    targeted_inr:
+                      type: number
+                    saving_pct:
+                      type: number
+                    assumptions:
+                      type: array
+                      items:
+                        type: string
+                warnings:
+                  type: array
+                  items:
+                    type: string
+                holds:
+                  type: array
+                  items:
+                    type: object
+
+    AuditEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                verdict:
+                  type: string
+                  enum: [PASS, FAIL]
+                remediation_rounds:
+                  type: integer
+                attacks:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      attack:
+                        type: string
+                      description:
+                        type: string
+                      verdict:
+                        type: string
+                        enum: [FOUND, NOT_FOUND]
+                      evidence_masked:
+                        type: string
+                      matches_count:
+                        type: integer
+                      duration_ms:
+                        type: integer
+                collateral_integrity:
+                  type: object
+                  properties:
+                    rows_compared:
+                      type: integer
+                    checksum_match:
+                      type: boolean
+                    other_subjects_affected:
+                      type: integer
+
+    AgentTraceEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  step:
+                    type: integer
+                  tool:
+                    type: string
+                  input:
+                    type: object
+                  output:
+                    type: object
+                  timestamp:
+                    type: string
+
+    ReceiptEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              $ref: '#/components/schemas/Receipt'
+
+    Receipt:
+      type: object
+      required:
+        - version
+        - receipt_id
+        - job_id
+        - issued_at
+        - policy_version
+        - subject_commitment
+        - pre_root
+        - post_root
+        - diff_root
+        - leaf_counts
+        - items_erased_counts
+        - retention_holds
+        - audit_summary
+        - algorithm_descriptors
+        - anchor
+        - signer_public_key
+        - signature
+      properties:
+        version:
+          type: string
+          example: "1.0.0"
+        receipt_id:
+          type: string
+          example: "rcpt_01JB0000000000000000000001"
+        job_id:
+          type: string
+          example: "job_01JB0000000000000000000001"
+        issued_at:
+          type: string
+          format: date-time
+        policy_version:
+          type: string
+        subject_commitment:
+          type: string
+          pattern: "^[a-f0-9]{64}$"
+        pre_root:
+          type: string
+          pattern: "^[a-f0-9]{64}$"
+        post_root:
+          type: string
+          pattern: "^[a-f0-9]{64}$"
+        diff_root:
+          type: string
+          pattern: "^[a-f0-9]{64}$"
+        leaf_counts:
+          type: object
+        items_erased_counts:
+          type: object
+        retention_holds:
+          type: array
+          items:
+            type: object
+        audit_summary:
+          type: object
+        algorithm_descriptors:
+          type: object
+        anchor:
+          type: object
+        signer_public_key:
+          type: string
+          pattern: "^[a-f0-9]{64}$"
+        signature:
+          type: string
+          pattern: "^[a-f0-9]{128}$"
+
+    CertificateEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                certificate_id:
+                  type: string
+                act:
+                  type: string
+                  example: "Bharatiya Sakshya Adhiniyam, 2023 (Section 63)"
+                title:
+                  type: string
+                hash_values:
+                  type: object
+                statement:
+                  type: string
+                signatory:
+                  type: object
+
+    VerificationResultEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                verified:
+                  type: boolean
+                checks:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      status:
+                        type: string
+                        enum: [PASS, FAIL]
+                      detail:
+                        type: string
+
+    AttackResultEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                attack_type:
+                  type: string
+                verdict:
+                  type: string
+                  enum: [FOUND, NOT_FOUND]
+                evidence_summary:
+                  type: string
+                match_count:
+                  type: integer
+                duration_ms:
+                  type: integer
+
+    PreflightEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                overall_status:
+                  type: string
+                  enum: [green, amber, red]
+                components:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      status:
+                        type: string
+                        enum: [green, amber, red]
+                      message:
+                        type: string
+
+    ImpactEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                total_jobs:
+                  type: integer
+                objects_shredded:
+                  type: integer
+                bytes_shredded:
+                  type: integer
+                cost_saved_inr:
+                  type: number
+                avg_completion_seconds:
+                  type: number
+
+    ActionSuccessEnvelope:
+      allOf:
+        - $ref: '#/components/schemas/EnvelopeBase'
+        - properties:
+            data:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                message:
+                  type: string

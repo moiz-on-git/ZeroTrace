@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: zerotrace-orchestrator
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: services/orchestrator
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python -m uvicorn main:app --app-dir src --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHONPATH
+        value: src
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ZT_ENV
+        value: production
+      - key: ZT_ENABLE_OFFLINE_FALLBACK
+        value: "true"
+      - key: ZT_ANCHOR_PROVIDER
+        value: local
+      - key: ZT_SERVICE_KEY
+        generateValue: true
+      - key: ZT_JWT_SECRET
+        generateValue: true
+      - key: ZT_PEPPER_SECRET
+        generateValue: true
+      - key: ZT_DATABASE_URL
+        value: sqlite+aiosqlite:///./zerotrace_app.db

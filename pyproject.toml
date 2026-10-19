@@ -1,0 +1,15 @@
+[tool.pyright]
+extraPaths = [
+    "services/orchestrator/src",
+    "services/orchestrator"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "services/orchestrator/src"
+]
+testpaths = [
+    "services/orchestrator/tests"
+]
+addopts = "-v"
+asyncio_mode = "strict"
