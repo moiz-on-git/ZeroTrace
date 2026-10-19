@@ -638,8 +638,9 @@ function ReceiptView({ receipt, secret, locale }: { receipt: Receipt; secret: st
                     const rawLang = locale.code.split("-")[0];
                     const lang = rawLang === "hi" || rawLang === "kn" || rawLang === "ta" ? rawLang : "en";
                     // Count total erased records across all layers
-                    const totalErased = Object.values(receipt.items_erased_counts || {}).reduce(
-                      (sum, n) => sum + (typeof n === "number" ? n : 0), 0
+                    const totalErased = Object.values(receipt.items_erased_counts || {}).reduce<number>(
+                      (sum, n) => sum + (typeof n === "number" ? n : 0),
+                      0,
                     );
                     speakReceipt({
                       receiptId: receipt.receipt_id,
